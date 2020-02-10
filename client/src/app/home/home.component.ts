@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OktaAuthService } from '@okta/okta-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from "../shared/auth/auth.service";
 import {Router} from "@angular/router";
