@@ -4,13 +4,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable, of } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
 
-  token: any = null;
   currentUser = null;
   testTokenResults: any;
 
@@ -18,15 +16,10 @@ export class AuthService {
     public afAuth: AngularFireAuth,
     private http: HttpClient
   ) {
-    this.afAuth.authState.subscribe(async(user)=> {
-      this.currentUser = user;
-      if(user) {
-        this.token = await user.getIdToken();
+      this.afAuth.authState.subscribe(async(user)=> {
+        this.currentUser = user;
         this.testToken();
-      }else{
-        this.token = 'empty-token';
-      }
-    });
+      });
   }
 
   testToken() {
@@ -64,8 +57,6 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       if (firebase.auth().currentUser) {
         this.afAuth.auth.signOut().then(() => {
-          this.token = null;
-          // this.testIdToken();
         });
         resolve();
       } else {

@@ -12,14 +12,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarEditComponent } from './car-edit/car-edit.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AuthInterceptor } from './shared/okta/auth.interceptor';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AuthInterceptor } from './shared/auth/auth.interceptor';
 import { HomeComponent } from './home/home.component';
-import {AngularFireModule} from "@angular/fire";
-import {AngularFirestoreModule} from "@angular/fire/firestore";
-import {AngularFireAuthModule} from "@angular/fire/auth";
-import {environment} from "../environments/environment";
-import {AuthService} from "./shared/auth/auth.service";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuth, AngularFireAuthModule } from "@angular/fire/auth";
+import { AuthService } from "./shared/auth/auth.service";
+import { environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import {AuthService} from "./shared/auth/auth.service";
     AngularFireAuthModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true, deps: [AngularFireAuth] },
     AuthService
   ],
   bootstrap: [AppComponent]
