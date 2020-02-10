@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
-import { OktaAuthService } from '@okta/okta-angular';
+import * as firebase from "firebase";
+import {environment} from "../../../environments/environment";
+import {AngularFireAuth} from "@angular/fire/auth";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private oktaAuth: OktaAuthService) {
+  authReady = false;
+  constructor(private afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe(async(user)=> {
+      this.authReady = true;
+    });
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -14,16 +20,18 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private async handleAccess(request: HttpRequest<any>, next: HttpHandler): Promise<HttpEvent<any>> {
-    // Only add to known domains since we don't want to send our tokens to just anyone.
-    // Also, Giphy's API fails when the request includes a token.
-    if (request.urlWithParams.indexOf('localhost') > -1) {
-      const accessToken = await this.oktaAuth.getAccessToken();
-      request = request.clone({
-        setHeaders: {
-          Authorization: 'Bearer ' + accessToken
-        }
-      });
+    let accessToken = 'TODO:IDK'
+    if (this.authReady && request.urlWithParams.indexOf(environment.httpEndpoint.replace(/http[s]*:/,'')) > -1) {
+      let firebaseUser = firebase.auth().currentUser;
+      accessToken = await firebaseUser.getIdToken(true);
+    } else {
+      // TODO: No One On The Internet Has An Example How To Wait For Auth Before Running An Intercept!
     }
+    request = request.clone({
+      setHeaders: {
+        Authorization: 'Bearer ' + accessToken
+      }
+    });
     return next.handle(request).toPromise();
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {AuthService} from "../shared/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -8,15 +11,32 @@ import { OktaAuthService } from '@okta/okta-angular';
 })
 export class HomeComponent implements OnInit {
   isAuthenticated: boolean;
+  loginForm: FormGroup;
+  errorMessage = '';
 
-  constructor(private oktaAuth: OktaAuthService) {
+  constructor(public authService: AuthService,
+              private router: Router,
+              private fb: FormBuilder) {
   }
 
   async ngOnInit() {
-    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
-    // Subscribe to authentication state changes
-    this.oktaAuth.$authenticationState.subscribe(
-      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
-    );
+    this.createForm();
+  }
+
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  tryLogin(value) {
+    this.authService.doLogin(value)
+      .then(res => {
+        // this.router.navigate(['/car-list']);
+      }, err => {
+        console.log(err);
+        this.errorMessage = err.message;
+      });
   }
 }

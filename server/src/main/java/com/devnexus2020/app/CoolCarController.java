@@ -1,4 +1,4 @@
-package com.okta.developer.demo;
+package com.devnexus2020.app;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 class CoolCarController {
     private CarRepository repository;
 
-    public CoolCarController(CarRepository repository) {
-        this.repository = repository;
+    public CoolCarController(CarRepository repo) {
+        repository = repo;
     }
 
     @GetMapping("/cool-cars")
