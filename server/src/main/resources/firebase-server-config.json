@@ -7,8 +7,9 @@
   "messagingSenderId": "720797766768",
 
   "type": "service_account",
-  "private_key_id": "ecf860fd80d9eda92c833d0681ead77d58e34eaf",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8HdvXYEYmqUGq\nShn8Hkm1QWkyacEisWpVnUlp0ekn4r5htpe+UAO/G6SbSnGFypiyeAux46ZaHlKP\n16l2epZfdCinhxejiIvMS11DBT+luY6uQIO/dFgXbrIFHa2xqT5xe/v2vgpP8B6P\nctT+mNck38AzPwAvnEyGhHXLWLnsfsWqnVg6aDp2R7tjSB/ZxISteCGGAqJ0fR7G\n3rF9wW4YcCwaUZIheaJBHXWqznbwmECwpBUAtnKprqfplLX9Tk/59FSCFz7sVKla\nNY2lgEiZ8p4eqWnKqja/E7mmebLYpmMSM2p6L4r34DHDXJadOrH56QgtvBQvTo+n\n4GOXbpCVAgMBAAECggEAFL4sIB8fDSNLuNXL8Ld8RC7OxT7RC5zJj2A1GKSLU5kW\nihrCt7sF9rw7Fd6LDwgsdz1yeK6UCMrgKrlKl+RjkWnzE6n7Ss6DL8c9pOa+wmzo\nFUHK5UEUd5z+pz7DCNyTJJtZyLbi1zawf/vXDa3Xx1qezGfNgvJ2o7yWapJBihit\nsRrm+X9j8swFQ20PzLplp0/abW7WdAsKoWXjcr0zL1bQYE05GfyoN4Ok2NuF8Xja\nHNPRd3v98u9pQP3IalkS/tCXPv85OGwoWCFloPIdlwXkoRYc5mTBbOjTlbwLFPuj\nKdQYBQclv7ydMaVkEGH8x3VL3uIQx7lgyPLJeCd13wKBgQD5uVk9cNvj+FfCFehc\n2HJAwd9ZpoPYybnDHUFEVmgbB+zczQQDnZK/CsAn/ZOArOwK8qDLCGzKsD/JQU7I\nXvCTjg5RNiyhDAqxZ6bejlBNDZCTb5sJ+i8VlcxoJkv4lm6hkmbA55Qnem2hmSQL\n6PS62Qh4nF+F0+2RzslaN+DSVwKBgQDA2CVw+vQQjlchOnINBArIEQXz4PA0miYe\nBmAFtSsY6abMVL0dLsQcS0CmPVOpDiuUAJRGFIFdVgoYnck3mXXLll7GbtjFvfLU\ntPrYdH0aGQD4q7w90t3dq6JhA8dR5Spy0jT+se9EAEuUh91C7FBo+BmjBxBeU+8Z\nbsI/129Y8wKBgQC1mO2mWm3tR+k5gIjrC5N6OAHdxdNXUMq/coTF1zf5gDflEUl7\n/5h5SK4X5rTe++DizTHUs5m5g5W/GrjZyQCVrNYIhKbLrmAQRln4ufD3N4gNTzml\ndcPLpJVyn3bbnTlyUW5blYwNcWBMBXtLFerx/WXFn6FvRoAaag/OhZf+HQKBgCbx\nv6XwWCebx0bDmdK9FTxQC8azj27gDoCTwwKEEr8GOJQdLM/e6OXZ4KVxzxpd7TkH\nYOpCK9ngjUtpWgBrcll59YvXSNmuQYLpRZs+8yC5GfQeInbNxdaFWdaDv9XvFMJ5\nZxBkeLBf6uOFCI8CUD7Sk8LTo1+ZTbjyIDJqXGc3AoGAAZZXuaTlPKtQIIj4R0i5\nJo32ZJ1k7ch4gYhl978JUeYEkJjqei1YcogLIZo5qZeMUAU6c3c/09Dm5k3KweHT\n8RS7w4veAVfkO8Y9kkuqNmqsQHSxe/nbn9gHVGCrD6C0ic1N1Cqv3ZB2JRjQB2qI\nsKmuc2rc39Ri/OEHjnEc0aQ=\n-----END PRIVATE KEY-----\n",
+  "project_id": "dev-nexus-2020",
+  "private_key_id": "CALL ME FOR THIS INFO",
+  "private_key": "Google Cloud Monitors github check ins for private keys and sends me endless emails.  We can add this to gitignore later.",
   "client_email": "firebase-adminsdk-jbkty@dev-nexus-2020.iam.gserviceaccount.com",
   "client_id": "107291991402374830797",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
