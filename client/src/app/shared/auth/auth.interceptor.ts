@@ -8,7 +8,7 @@ import {first, map, take} from "rxjs/operators";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
+  urlToIntercept = environment.httpEndpoint.replace(/https?:/,'');
   constructor(private afAuth: AngularFireAuth) {
   }
 
@@ -17,12 +17,14 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private async handleAccess(request: HttpRequest<any>, next: HttpHandler): Promise<HttpEvent<any>> {
-     const token = await this.afAuth.idToken.pipe(first()).toPromise();
-    request = request.clone({
-      setHeaders: {
-        Authorization: 'Bearer ' + token
-      }
-    });
+    if(request.url.indexOf(this.urlToIntercept) > -1) {
+      const token = await this.afAuth.idToken.pipe(first()).toPromise();
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Bearer ' + token
+        }
+      });
+    }
     return next.handle(request).toPromise();
   }
 }

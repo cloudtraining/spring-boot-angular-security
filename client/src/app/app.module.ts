@@ -20,13 +20,15 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuth, AngularFireAuthModule } from "@angular/fire/auth";
 import { AuthService } from "./shared/auth/auth.service";
 import { environment} from "../environments/environment";
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarListComponent,
     CarEditComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

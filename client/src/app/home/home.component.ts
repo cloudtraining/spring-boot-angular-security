@@ -38,4 +38,36 @@ export class HomeComponent implements OnInit {
         this.errorMessage = err.message;
       });
   }
+
+  tryGithubLogin(){
+    this.authService.doGithubLogin()
+        .then(res =>{
+              this.router.navigate(['/home']);
+            }, err => console.log(err)
+        )
+  }
+
+  tryFacebookLogin(){
+    this.authService.doFacebookLogin()
+        .then(res =>{
+              this.router.navigate(['/home']);
+            }, err => console.log(err)
+        )
+  }
+
+  tryTwitterLogin(){
+    this.authService.doTwitterLogin()
+        .then(res =>{
+              this.router.navigate(['/home']);
+            }, err => console.log(err)
+        )
+  }
+
+  tryGoogleLogin(){
+    this.authService.doGoogleLogin()
+        .then(res =>{
+              this.router.navigate(['/home']);
+            }, err => console.log(err)
+        )
+  }
 }

@@ -11,9 +11,15 @@
         <input type="password" class="form-control" formControlName="password">
         <label class="error">{{errorMessage}}</label>
       </div>
-      <button mat-raised-button color="accent" type="submit"
+      <button mat-raised-button color="primary" type="submit"
               (click)="tryLogin(loginForm.value)" class="btn btn-default">Login</button>
+      <a [routerLink]="['/register']">Register</a>
     </form>
+    <div>
+      <button mat-raised-button color="accent" type="submit"
+              (click)="tryGithubLogin()" class="btn btn-default">Login With Github</button>
+
+    </div>
   </mat-card-content>
   <mat-card-content *ngIf="authService.currentUser">
 
