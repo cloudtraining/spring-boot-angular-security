@@ -4,6 +4,7 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { HomeComponent } from './home/home.component';
 import {RegisterComponent} from "./register/register.component";
+import {AuthGuard} from "./shared/auth/auth.guard";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,16 +18,23 @@ const routes: Routes = [
   },
   {
     path: 'car-list',
-    component: CarListComponent
+    component: CarListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'car-add',
-    component: CarEditComponent
+    component: CarEditComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'car-edit/:id',
-    component: CarEditComponent
-  }
+    component: CarEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'auth-callback',
+    component: HomeComponent
+  },
 ];
 
 @NgModule({

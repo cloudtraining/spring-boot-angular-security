@@ -21,6 +21,9 @@ import { AngularFireAuth, AngularFireAuthModule } from "@angular/fire/auth";
 import { AuthService } from "./shared/auth/auth.service";
 import { environment} from "../environments/environment";
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from "./shared/auth/auth.guard";
+import {MatIconModule} from "@angular/material/icon";
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatListModule,
     MatToolbarModule,
+      MatIconModule,
+    FlexLayoutModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -48,7 +53,8 @@ import { RegisterComponent } from './register/register.component';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true, deps: [AngularFireAuth] },
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

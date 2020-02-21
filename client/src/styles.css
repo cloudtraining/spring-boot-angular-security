@@ -5,7 +5,3 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
 }
-
-mat-card {
-  height: 100vh;
-}

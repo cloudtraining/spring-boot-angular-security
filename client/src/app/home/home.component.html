@@ -1,41 +1,62 @@
-<mat-card>
-  <mat-card-content *ngIf="!authService.currentUser">
-    <h1>Login with Email</h1>
-    <form [formGroup]="loginForm">
-      <div class="form-group">
-        <label>Email address</label>
-        <input type="email" formControlName="email" class="form-control">
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" formControlName="password">
-        <label class="error">{{errorMessage}}</label>
-      </div>
-      <button mat-raised-button color="primary" type="submit"
-              (click)="tryLogin(loginForm.value)" class="btn btn-default">Login</button>
-      <a [routerLink]="['/register']">Register</a>
-    </form>
-    <div>
-      <button mat-raised-button color="accent" type="submit"
-              (click)="tryGithubLogin()" class="btn btn-default">Login With Github</button>
+<div fxLayout="row" *ngIf="!authService.currentUser">
+    <mat-card>
+        <h1>Login</h1>
+        <form [formGroup]="loginForm">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address:</mat-label>
+                    <input matInput placeholder="Your email" formControlName="email">
+                    <mat-icon matSuffix>mail_outline</mat-icon>
+                    <mat-hint>Input the fully qualified email address</mat-hint>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Your password" type="password" formControlName="password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-hint>Min 8 char 1 number and 1 alpha</mat-hint>
+                    <label class="error">{{errorMessage}}</label>
+                </mat-form-field>
+            </p>
+        </form>
+    </mat-card>
+    <mat-card>
+        <div class="login-actions">
+            <button mat-raised-button color="primary" type="submit"
+                    (click)="tryLogin(loginForm.value)" class="btn btn-default">Login
+            </button>
+            <button mat-raised-button color="primary" [routerLink]="['/register']">Register</button>
+            <button mat-raised-button color="accent" type="submit"
+                    (click)="tryGithubLogin()" class="btn btn-default">Login With Github
+            </button>
+            <button mat-raised-button color="accent" type="submit"
+                    (click)="tryGoogleLogin()" class="btn btn-default">Login With Google
+            </button>
+            <button mat-raised-button color="accent" type="submit"
+                    (click)="tryPKCELogin()" class="btn btn-default">Login With PKCE
+            </button>
+        </div>
+    </mat-card>
+</div>
 
-    </div>
-  </mat-card-content>
-  <mat-card-content *ngIf="authService.currentUser">
-
+<mat-card *ngIf="authService.currentUser">
+  <mat-card-content >
     <button mat-raised-button color="accent" [routerLink]="['/car-list']">Car List</button>
+  </mat-card-content>
+</mat-card>
 
-    <div>
-      <b>User Info</b>
-      <pre style="white-space: pre-line">
+<mat-card class="debug-info">
+    <mat-card-content>
+        <div>
+            <b>User Info</b>
+            <pre style="white-space: pre-line">
       {{authService.currentUser | json}}
       </pre>
-      <b>Token HTTP Test</b>
-      <pre style="white-space: pre-line">
+            <b>Token HTTP Test</b>
+            <pre style="white-space: pre-line">
       {{authService.testTokenResults | json}}
       </pre>
-    </div>
-
-  </mat-card-content>
-
+        </div>
+    </mat-card-content>
 </mat-card>

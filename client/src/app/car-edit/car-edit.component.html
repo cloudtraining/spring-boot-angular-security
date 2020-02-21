@@ -1,5 +1,5 @@
 <mat-card>
-  <form #carForm="ngForm" (ngSubmit)="save(carForm.value)">
+  <form #carForm="ngForm" (ngSubmit)="save(carForm.value)" autocomplete="off" >
     <mat-card-header>
       <mat-card-title><h2>{{car.name ? 'Edit' : 'Add'}} Car</h2></mat-card-title>
     </mat-card-header>
