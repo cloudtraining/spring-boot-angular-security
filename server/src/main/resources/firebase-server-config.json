@@ -1,19 +1,13 @@
 {
-  "apiKey": "AIzaSyCh54PmNdy5kPEk-PzY_ySuAdGtESeLFwg",
-  "authDomain": "dev-nexus-2020.firebaseapp.com",
-  "databaseURL": "https://dev-nexus-2020.firebaseio.com",
-  "project_id": "dev-nexus-2020",
-  "storageBucket": "dev-nexus-2020.appspot.com",
-  "messagingSenderId": "720797766768",
-
+  "YOU NEED TO EDIT THIS FILE": "BEFORE YOUR SPRING BOOT APP WILL START!",
   "type": "service_account",
-  "project_id": "dev-nexus-2020",
-  "private_key_id": "CALL ME FOR THIS INFO",
-  "private_key": "Google Cloud Monitors github check ins for private keys and sends me endless emails.  We can add this to gitignore later.",
-  "client_email": "firebase-adminsdk-jbkty@dev-nexus-2020.iam.gserviceaccount.com",
-  "client_id": "107291991402374830797",
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-jbkty%40dev-nexus-2020.iam.gserviceaccount.com"
+  "client_x509_cert_url": ""
 }

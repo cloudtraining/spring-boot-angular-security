@@ -6,12 +6,13 @@ export const environment = {
   production: false,
   httpEndpoint: 'http://localhost:8080',
   firebaseConfig : {
-    apiKey: ' AIzaSyCh54PmNdy5kPEk-PzY_ySuAdGtESeLFwg',
-    authDomain: 'dev-nexus-2020.firebaseapp.com',
-    databaseURL: 'https://dev-nexus-2020.firebaseio.com',
-    projectId: 'dev-nexus-2020',
-    storageBucket: 'dev-nexus-2020.appspot.com',
-    messagingSenderId: '720797766768'
+    apiKey: "AIzaSyCh54PmNdy5kPEk-PzY_ySuAdGtESeLFwg",
+    authDomain: "dev-nexus-2020.firebaseapp.com",
+    databaseURL: "https://dev-nexus-2020.firebaseio.com",
+    projectId: "dev-nexus-2020",
+    storageBucket: "dev-nexus-2020.appspot.com",
+    messagingSenderId: "720797766768",
+    appId: "1:720797766768:web:53d8b805b7df2a3ee190b5"
   }
 };
 
